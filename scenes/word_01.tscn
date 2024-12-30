@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://deo55bx2rfaal"]
+[gd_scene load_steps=7 format=3 uid="uid://deo55bx2rfaal"]
 
 [ext_resource type="Texture2D" uid="uid://d4iilbdvikxvf" path="res://assets/Seasonal Tilesets/1 - Grassland/Terrain (16 x 16).png" id="1_emolx"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_q6t8i"]
-[ext_resource type="Texture2D" uid="uid://8jwjwprn1uon" path="res://assets/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="1_sr32p"]
 [ext_resource type="Texture2D" uid="uid://bsdrrlhxj311m" path="res://assets/Seasonal Tilesets/1 - Grassland/Grassland_entities (16 x 16).png" id="2_q27nl"]
+[ext_resource type="PackedScene" uid="uid://c2283m6b3wx04" path="res://scenes/player.tscn" id="3_4l1hb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v7j4w"]
 texture = ExtResource("1_emolx")
@@ -102,36 +101,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_v7j4w")
 sources/1 = SubResource("TileSetAtlasSource_02f8c")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1a7ij"]
-atlas = ExtResource("1_sr32p")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_78bp5"]
-atlas = ExtResource("1_sr32p")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_38xrc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1a7ij")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_78bp5")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5w01l"]
-radius = 9.0
-height = 20.0
-
 [node name="Word-01" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(227, -11)
+position = Vector2(198, -12)
 tile_set = SubResource("TileSet_ycyke")
 format = 2
 layer_0/name = "ground"
@@ -139,15 +112,5 @@ layer_0/tile_data = PackedInt32Array(1245173, 196608, 1, 1245174, 262144, 1, 124
 layer_1/name = "trees"
 layer_1/tile_data = PackedInt32Array(983066, 65537, 1, 1114157, 917505, 4, 1048614, 327681, 1, 1048629, 589825, 1, 917569, 589825, 1, 1048572, 196609, 5)
 
-[node name="player" type="CharacterBody2D" parent="."]
-position = Vector2(76, 238)
-script = ExtResource("1_q6t8i")
-
-[node name="animy" type="AnimatedSprite2D" parent="player"]
-sprite_frames = SubResource("SpriteFrames_38xrc")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.556029
-
-[node name="collision" type="CollisionShape2D" parent="player"]
-shape = SubResource("CapsuleShape2D_5w01l")
+[node name="player" parent="." instance=ExtResource("3_4l1hb")]
+position = Vector2(64, 244)
