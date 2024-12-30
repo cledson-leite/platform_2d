@@ -113,4 +113,4 @@ layer_1/name = "trees"
 layer_1/tile_data = PackedInt32Array(983066, 65537, 1, 1114157, 917505, 4, 1048614, 327681, 1, 1048629, 589825, 1, 917569, 589825, 1, 1048572, 196609, 5)
 
 [node name="player" parent="." instance=ExtResource("3_4l1hb")]
-position = Vector2(64, 244)
+position = Vector2(55, 232)
