@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://deo55bx2rfaal"]
 
-[ext_resource type="PackedScene" path="res://resources/tilemap.tscn" id="1_xooa4"]
+[ext_resource type="PackedScene" uid="uid://dn20uo3flqq43" path="res://resources/tilemap.tscn" id="1_xooa4"]
 [ext_resource type="PackedScene" uid="uid://c2283m6b3wx04" path="res://scenes/player.tscn" id="3_4l1hb"]
 [ext_resource type="PackedScene" uid="uid://b42agljxm6x8y" path="res://resources/background.tscn" id="3_hku4c"]
 
 [node name="Word-01" type="Node2D"]
 
+[node name="Background" parent="." instance=ExtResource("3_hku4c")]
+
 [node name="TileMap" parent="." instance=ExtResource("1_xooa4")]
 
 [node name="player" parent="." instance=ExtResource("3_4l1hb")]
-position = Vector2(55, 232)
-
-[node name="Background" parent="." instance=ExtResource("3_hku4c")]
+position = Vector2(52, 252)

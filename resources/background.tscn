@@ -6,51 +6,57 @@
 [ext_resource type="Texture2D" uid="uid://cgu7ygbpu6uui" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/2 - Hills.png" id="4_02ox3"]
 [ext_resource type="Texture2D" uid="uid://831knexlnymp" path="res://assets/Seasonal Tilesets/1 - Grassland/Background parts/1 - Foreground_scenery.png" id="5_c6i7q"]
 
-[node name="Background" type="ParallaxBackground"]
+[node name="Background" type="Node2D"]
 
-[node name="sky" type="ParallaxLayer" parent="."]
-position = Vector2(0, -13)
-motion_mirroring = Vector2(432, 0)
+[node name="sky" type="Parallax2D" parent="."]
+scroll_offset = Vector2(0, -13)
+repeat_size = Vector2(432, 0)
+repeat_times = 3
 
 [node name="texture" type="Sprite2D" parent="sky"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_x4lgc")
 centered = false
 
-[node name="cloud_cover_2" type="ParallaxLayer" parent="."]
-position = Vector2(0, -13)
-motion_scale = Vector2(0.3, 1)
-motion_mirroring = Vector2(432, 0)
+[node name="cloud_cover_2" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.3, 1)
+scroll_offset = Vector2(0, -13)
+repeat_size = Vector2(432, 0)
+repeat_times = 3
 
 [node name="texture" type="Sprite2D" parent="cloud_cover_2"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_h62rh")
 centered = false
 
-[node name="cloud_cover_1" type="ParallaxLayer" parent="."]
-position = Vector2(0, -13)
-motion_scale = Vector2(0.5, 1)
-motion_mirroring = Vector2(432, 0)
+[node name="cloud_cover_1" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.5, 1)
+scroll_offset = Vector2(0, -13)
+repeat_size = Vector2(432, 0)
+autoscroll = Vector2(-25, 0)
+repeat_times = 3
 
 [node name="texture" type="Sprite2D" parent="cloud_cover_1"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_6mg7k")
 centered = false
 
-[node name="hills" type="ParallaxLayer" parent="."]
-position = Vector2(0, -13)
-motion_scale = Vector2(0.7, 1)
-motion_mirroring = Vector2(432, 0)
+[node name="hills" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.7, 1)
+scroll_offset = Vector2(0, -13)
+repeat_size = Vector2(432, 0)
+repeat_times = 3
 
 [node name="texture" type="Sprite2D" parent="hills"]
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("4_02ox3")
 centered = false
 
-[node name="foreground" type="ParallaxLayer" parent="."]
-position = Vector2(0, -13)
-motion_scale = Vector2(0.9, 1)
-motion_mirroring = Vector2(432, 0)
+[node name="foreground" type="Parallax2D" parent="."]
+scroll_scale = Vector2(0.9, 1)
+scroll_offset = Vector2(0, -13)
+repeat_size = Vector2(432, 0)
+repeat_times = 3
 
 [node name="texture" type="Sprite2D" parent="foreground"]
 scale = Vector2(1.5, 1.5)

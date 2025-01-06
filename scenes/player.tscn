@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://c2283m6b3wx04"]
+[gd_scene load_steps=14 format=3 uid="uid://c2283m6b3wx04"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_kkyww"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_fotqi"]
 [ext_resource type="Texture2D" uid="uid://8jwjwprn1uon" path="res://assets/Sprite Pack 2/2 - Mr. Mochi/Idle (32 x 32).png" id="2_4dmyh"]
 [ext_resource type="Texture2D" uid="uid://bw6by5c5bc2hn" path="res://assets/Sprite Pack 2/2 - Mr. Mochi/Running (32 x 32).png" id="3_e2w26"]
 [ext_resource type="Texture2D" uid="uid://n8ky4iimpqj" path="res://assets/Sprite Pack 2/2 - Mr. Mochi/Jumping (32 x 32).png" id="3_lrfww"]
+[ext_resource type="Script" path="res://scripts/player/stateMachine/stateMachine.gd" id="5_7yrvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otghi"]
 size = Vector2(20, 17)
@@ -72,7 +73,7 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D"]
-script = ExtResource("1_kkyww")
+script = ExtResource("1_fotqi")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2.5)
@@ -80,11 +81,13 @@ shape = SubResource("RectangleShape2D_otghi")
 
 [node name="camera" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+process_callback = 0
 limit_left = 0
 limit_bottom = 320
 limit_smoothed = true
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
+drag_vertical_enabled = true
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
@@ -93,3 +96,6 @@ position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_38xrc")
 animation = &"jump"
 autoplay = "idle"
+
+[node name="stateMachine" type="Node" parent="."]
+script = ExtResource("5_7yrvp")
